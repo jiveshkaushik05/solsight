@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — SolSight</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="bg-[#0a0f1f] text-gray-100">
+  <!-- Cursor + Progress + Thanks -->
+  <div id="progress" class="progress-bar" style="width:0%"></div>
+  <div id="cursor" class="cursor"></div>
+  <div id="cursor-follower" class="cursor-follower"></div>
+  <div id="thanks" class="thanks-message">Thanks for visiting ✨</div>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-[#0a0f1f]/70 border-b border-white/5">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2">
+        <span class="h-3 w-3 rounded-full" style="background:radial-gradient(circle at 30% 30%,#00FFA3,#9945FF)"></span>
+        <span class="headings text-lg font-semibold">SolSight</span>
+      </a>
+      <div class="hidden md:flex items-center gap-6 text-sm">
+        <a data-nav href="index.html" class="nav-link hover:text-[#00FFA3] transition-colors">Home</a>
+        <a data-nav href="about.html" class="nav-link hover:text-[#00FFA3] transition-colors">About</a>
+        <a data-nav href="team.html" class="nav-link hover:text-[#00FFA3] transition-colors">Team</a>
+        <a data-nav href="contact.html" class="nav-link hover:text-[#00FFA3] transition-colors">Contact</a>
+      </div>
+      <button id="menu-btn" class="md:hidden p-2 rounded hover:bg-white/5" aria-label="Open navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-white/5">
+      <div class="px-4 py-3 flex flex-col gap-2">
+        <a data-nav href="index.html" class="py-2">Home</a>
+        <a data-nav href="about.html" class="py-2">About</a>
+        <a data-nav href="team.html" class="py-2">Team</a>
+        <a data-nav href="contact.html" class="py-2">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-16">
+    <header class="mb-10 text-center" data-animate>
+      <h1 class="headings text-3xl font-semibold text-glow">Get in Touch</h1>
+      <p class="mt-2 text-gray-300">We’d love to hear from potential volunteers, partners, and supporters.</p>
+    </header>
+
+    <section class="grid lg:grid-cols-2 gap-8 items-start">
+      <figure class="glass rounded-2xl overflow-hidden order-last lg:order-first" data-animate>
+        <img class="w-full h-full object-cover img-zoom" loading="lazy" alt="Abstract contact illustration"
+             src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=60" />
+      </figure>
+
+      <form class="glass rounded-2xl p-6 space-y-4" data-animate onsubmit="return false;" aria-label="Contact form">
+        <div>
+          <label for="name" class="block text-sm text-gray-300">Name</label>
+          <input id="name" type="text" class="mt-1 w-full rounded-lg bg-white/5 border border-white/10 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00FFA3]" placeholder="Jane Doe" />
+        </div>
+        <div>
+          <label for="email" class="block text-sm text-gray-300">Email</label>
+          <input id="email" type="email" class="mt-1 w-full rounded-lg bg-white/5 border border-white/10 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00FFA3]" placeholder="jane@example.com" />
+        </div>
+        <div>
+          <label for="message" class="block text-sm text-gray-300">Message</label>
+          <textarea id="message" rows="5" class="mt-1 w-full rounded-lg bg-white/5 border border-white/10 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00FFA3]" placeholder="Tell us how you’d like to help…"></textarea>
+        </div>
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button class="btn-glow inline-flex items-center gap-2 rounded-full px-6 py-3 bg-[#00FFA3] text-black font-medium transition-all duration-300 hover:-translate-y-0.5">
+            Join Waitlist
+          </button>
+          <div class="flex items-center gap-4 text-xl text-gray-300">
+            <a href="https://x.com/sol__sight" target="_blank" aria-label="Twitter" class="hover:text-[#00FFA3]">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="mailto:solsight.solana@gmail.com" aria-label="Email" class="hover:text-[#00FFA3]"> 
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/5 py-8 text-center text-sm text-gray-400">
+    © 2025 SolSight | Empowering Vision Through Web3
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

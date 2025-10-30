@@ -1,0 +1,101 @@
+/* SolSight Custom Styles */
+:root{
+  --sol-green:#00FFA3;
+  --sol-purple:#9945FF;
+  --bg-deep:#0a0f1f;
+  --text-soft:#c8d0e0;
+}
+html{scroll-behavior:smooth}
+body{font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; cursor:none; overflow-x:hidden}
+.headings{font-family:Poppins, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;}
+
+/* Custom Cursor */
+.cursor{position:fixed; width:20px; height:20px; border-radius:50%; background:rgba(0,255,163,0.8); pointer-events:none; z-index:9999; transition:transform 0.1s ease-out, background 0.3s ease}
+.cursor-follower{position:fixed; width:8px; height:8px; border-radius:50%; background:rgba(153,69,255,0.6); pointer-events:none; z-index:9998; transition:transform 0.15s ease-out}
+.cursor.hover{transform:scale(2); background:rgba(153,69,255,0.9)}
+
+/* Glassmorphism card */
+.glass{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);box-shadow:0 10px 30px rgba(0,0,0,0.35);backdrop-filter:blur(10px); transition:all 0.3s cubic-bezier(0.4,0,0.2,1)}
+.glass:hover{border-color:rgba(255,255,255,0.16);box-shadow:0 16px 40px rgba(0,0,0,0.45), 0 0 30px rgba(0,255,163,0.1)}
+
+/* Reveal on scroll */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+.reveal.show{opacity:1;transform:none}
+
+/* Enhanced Button glow */
+.btn-glow{position:relative; overflow:hidden; transition:all 0.4s cubic-bezier(0.4,0,0.2,1)}
+.btn-glow::before{content:""; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background:linear-gradient(45deg,transparent,rgba(255,255,255,0.1),transparent); transition:transform 0.6s ease; transform:translateX(-100%) translateY(-100%) rotate(45deg)}
+.btn-glow:hover::before{transform:translateX(100%) translateY(100%) rotate(45deg)}
+.btn-glow::after{content:"";position:absolute;inset:-2px;border-radius:9999px;background:linear-gradient(135deg,var(--sol-green),var(--sol-purple));filter:blur(15px);opacity:.4;z-index:-1;transition:all .3s ease}
+.btn-glow:hover{transform:translateY(-2px) scale(1.02)}
+.btn-glow:hover::after{opacity:.8; filter:blur(20px)}
+.btn-glow:active{transform:translateY(-1px) scale(0.98)}
+
+/* Enhanced Hover lift & image zoom */
+.hover-lift{transition:all 0.3s cubic-bezier(0.4,0,0.2,1)}
+.hover-lift:hover{transform:translateY(-8px) rotate(1deg); box-shadow:0 20px 60px rgba(0,0,0,0.3), 0 0 40px rgba(0,255,163,0.1)}
+.img-zoom{transition:transform .6s cubic-bezier(0.4,0,0.2,1)}
+.img-zoom:hover{transform:scale(1.05) rotate(-0.5deg)}
+
+/* Text glow effects */
+.text-glow{transition:all 0.3s ease}
+.text-glow:hover{text-shadow:0 0 20px rgba(0,255,163,0.6), 0 0 40px rgba(0,255,163,0.4); transform:scale(1.02)}
+
+/* Enhanced Animated gradient background */
+.bg-animated{
+  background:radial-gradient(800px 400px at 10% 10%, rgba(153,69,255,0.15), transparent),
+             radial-gradient(900px 500px at 90% 20%, rgba(0,255,163,0.15), transparent),
+             linear-gradient(45deg, rgba(153,69,255,0.05) 0%, transparent 50%, rgba(0,255,163,0.05) 100%);
+  animation:gradientShift 15s ease-in-out infinite alternate, gradientPulse 8s ease-in-out infinite alternate;
+}
+@keyframes gradientShift{
+  0%{background-position:0% 0%, 100% 0%, 0% 0%}
+  100%{background-position:30% 20%, 70% 30%, 100% 100%}
+}
+@keyframes gradientPulse{
+  0%{opacity:0.8}
+  100%{opacity:1}
+}
+
+/* Moving progress bar */
+.progress-bar{position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--sol-green),var(--sol-purple)); z-index:9999; transition:width 0.3s ease; box-shadow:0 0 10px rgba(0,255,163,0.5)}
+
+/* Floating particles */
+.particles{position:absolute; width:100%; height:100%; overflow:hidden; pointer-events:none}
+.particle{position:absolute; width:4px; height:4px; background:rgba(0,255,163,0.6); border-radius:50%; animation:float 8s infinite linear}
+@keyframes float{
+  0%{transform:translateY(100vh) rotate(0deg); opacity:0}
+  10%{opacity:1}
+  90%{opacity:1}
+  100%{transform:translateY(-100px) rotate(360deg); opacity:0}
+}
+
+/* Thank you message */
+.thanks-message{position:fixed; bottom:20px; right:20px; background:rgba(0,0,0,0.8); color:var(--sol-green); padding:12px 20px; border-radius:25px; backdrop-filter:blur(10px); border:1px solid rgba(0,255,163,0.3); transform:translateY(100px); opacity:0; transition:all 0.5s cubic-bezier(0.4,0,0.2,1); z-index:1000; box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+.thanks-message.show{transform:translateY(0); opacity:1}
+.thanks-message.hide{transform:translateY(100px); opacity:0}
+
+/* Decorative radial mask */
+.mask-fade{mask-image:radial-gradient(60% 60% at 50% 50%, #000 60%, transparent 100%)}
+
+/* Enhanced Divider */
+.divider{height:2px;background:linear-gradient(90deg, transparent, rgba(0,255,163,0.3), rgba(153,69,255,0.3), transparent); animation:shimmer 3s ease-in-out infinite}
+@keyframes shimmer{
+  0%,100%{opacity:0.5}
+  50%{opacity:1}
+}
+
+/* Nav enhancement */
+.nav-link{position:relative; overflow:hidden}
+.nav-link::after{content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:linear-gradient(90deg,var(--sol-green),var(--sol-purple)); transition:width 0.3s ease}
+.nav-link:hover::after{width:100%}
+
+/* Reduced motion */
+@media (prefers-reduced-motion:reduce){
+  .reveal{transition:none}
+  .hover-lift, .img-zoom, .text-glow{transition:none}
+  .bg-animated{animation:none}
+  .particle{animation:none}
+  body{cursor:auto}
+  .cursor, .cursor-follower{display:none}
+}
